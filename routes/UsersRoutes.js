@@ -6,7 +6,15 @@ const router = express.Router();
 // api.use('/api');
 
 const { UsersController } = require('../controllers');
+const { UsersValidator } = require('../validators');
+const { veryToken } = require('../middlewares');
 
-router.post('/api/v1/users', UsersController.create);
+router.post('/users',
+  UsersValidator.create,
+  UsersController.create);
+
+router.get('/users',
+  veryToken,
+  UsersController.findAll);
 
 module.exports = router;

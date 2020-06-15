@@ -4,17 +4,26 @@
   "description": "Backend siguiendo arquitectura MVC",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=staging nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"**/*.js\"",
+    "lint-fix": "eslint \"**/*.js\" --fix"
   },
   "keywords": [
-    "Carlos",
-    "Sanchez"
+    "node",
+    "express",
+    "backend",
+    "MVC"
   ],
   "author": "Carlos Sanchez",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "celebrate": "^12.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.18"
   },
   "devDependencies": {

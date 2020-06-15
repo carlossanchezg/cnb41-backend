@@ -3,8 +3,9 @@
 // process.env.MI_VARIABLE_DE_ENTORNO asi accedemos a variables
 const mongoose = require('mongoose');
 
+const { MONGO_URI } = require('../config');
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
